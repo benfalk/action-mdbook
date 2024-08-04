@@ -1,6 +1,6 @@
-name: mdBook Action with plugins
+name: mdBook Journaling
 description: A github action that installs mdBook and optional some popular mdbook plugins
-author: "Jontze"
+author: "Ben Falk"
 inputs:
   token:
     description: "Github token"
@@ -55,6 +55,14 @@ inputs:
     default: false
   katex-version:
     description: katex version that should be used
+    required: false
+    default: "latest"
+  use-journal:
+    description: Use journal plugin (true / false)
+    required: false
+    default: false
+  journal-version:
+    description: journal version that should be used
     required: false
     default: "latest"
 runs:

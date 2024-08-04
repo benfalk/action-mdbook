@@ -18,6 +18,7 @@ const Linkcheck_1 = require("./plugins/Linkcheck");
 const Mermaid_1 = require("./plugins/Mermaid");
 const OpenGh_1 = require("./plugins/OpenGh");
 const Toc_1 = require("./plugins/Toc");
+const Journal_1 = require("./plugins/Journal");
 /**
  * Run the action async
  */
@@ -53,6 +54,11 @@ const run = () => __awaiter(void 0, void 0, void 0, function* () {
     if ((0, core_1.getBooleanInput)("use-katex") === true) {
         const katexPlugin = new Katex_1.Katex();
         yield katexPlugin.setup();
+    }
+    // Journal - 3rd part preprocessor plugin for mdbook to add journaling features
+    if ((0, core_1.getBooleanInput)("use-journal") === true) {
+        const journalPlugin = new Journal_1.Journal();
+        yield journalPlugin.setup();
     }
 });
 exports.run = run;

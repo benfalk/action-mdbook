@@ -6,6 +6,7 @@ import { Linkcheck } from "./plugins/Linkcheck";
 import { Mermaid } from "./plugins/Mermaid";
 import { OpenGh } from "./plugins/OpenGh";
 import { Toc } from "./plugins/Toc";
+import { Journal } from "./plugins/Journal";
 
 /**
  * Run the action async
@@ -48,5 +49,11 @@ export const run = async () => {
   if (getBooleanInput("use-katex") === true) {
     const katexPlugin = new Katex();
     await katexPlugin.setup();
+  }
+
+  // Journal - 3rd part preprocessor plugin for mdbook to add journaling features
+  if (getBooleanInput("use-journal") === true) {
+    const journalPlugin = new Journal();
+    await journalPlugin.setup();
   }
 };
