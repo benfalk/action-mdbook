@@ -7,6 +7,7 @@ import { Mermaid } from "./plugins/Mermaid";
 import { OpenGh } from "./plugins/OpenGh";
 import { Toc } from "./plugins/Toc";
 import { Journal } from "./plugins/Journal";
+import { AnchorsAweigh } from "./plugins/AnchorsAweigh";
 
 /**
  * Run the action async
@@ -55,5 +56,11 @@ export const run = async () => {
   if (getBooleanInput("use-journal") === true) {
     const journalPlugin = new Journal();
     await journalPlugin.setup();
+  }
+
+  // Journal - 3rd part preprocessor plugin for better include features
+  if (getBooleanInput("use-anchors-aweigh") === true) {
+    const anchorsAweighPlugin = new AnchorsAweigh();
+    await anchorsAweighPlugin.setup();
   }
 };

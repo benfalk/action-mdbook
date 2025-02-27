@@ -65,6 +65,14 @@ inputs:
     description: journal version that should be used
     required: false
     default: "latest"
+  use-anchors-aweigh:
+    description: Use anchors-aweigh plugin (true / false)
+    required: false
+    default: false
+  anchors-aweigh-version:
+    description: anchors version that should be used
+    required: false
+    default: "latest"
 runs:
   using: "node20"
   main: "./dist/index.js"

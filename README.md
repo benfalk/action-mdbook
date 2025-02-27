@@ -18,6 +18,7 @@ This action runs only on linux and is well tested on GitHubs **latest ubuntu** r
 - [tommilligan/mdbook-admonish](https://github.com/tommilligan/mdbook-admonish)
 - [lzanini/mdbook-katex](https://github.com/lzanini/mdbook-katex)
 - [bfalk/mdbook-journal](https://github.com/bfalk/mdbook-journal)
+- [bfalk/anchors-aweigh](https://github.com/bfalk/anchors-aweigh)
 
 ## Fast Setup
 
@@ -45,6 +46,7 @@ jobs:
           use-admonish: true
           use-katex: true
           use-journal: true
+          use-anchors-aweigh: true
       - name: Show mdbook version
         run: mdbook --version
       - name: Show linkchecker version
@@ -61,6 +63,8 @@ jobs:
         run: mdbook-katex --version
       - name: Show journal version
         run: mdbook-journal --version
+      - name: Show anchors-aweigh version
+        run: mdbook-anchors-aweigh --version
 ```
 
 ## Advanced Setup
